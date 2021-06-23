@@ -87,6 +87,7 @@
         async function predictImage() {
             const img = document.getElementById( "webcam" );
             const segmentation = await model.segmentPersonParts( img );
+            
             if( segmentation.allPoses.length > 0 ) {
                 const keypoints = segmentation.allPoses[ 0 ].keypoints;
                 const nose = keypoints[ 0 ].position;
@@ -122,14 +123,14 @@
                 }
  
                 // --- Uncomment the following to view the BodyPix mask ---
-                // const canvas = document.getElementById( "canvas" );
-                // bodyPix.drawMask(
-                //     canvas, img,
-                //     bodyPix.toColoredPartMask( segmentation ),
-                //     0.7,
-                //     0,
-                //     false
-                // );
+                const canvas = document.getElementById( "canvas" );
+                bodyPix.drawMask(
+                    canvas, img,
+                    bodyPix.toColoredPartMask( segmentation ),
+                    0.7,
+                    0,
+                    false
+                );
             }
         }
         </script>
