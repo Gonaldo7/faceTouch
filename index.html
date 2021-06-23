@@ -57,7 +57,7 @@
                 if( navigator.getUserMedia ) {
                     navigator.getUserMedia( { 
                             video: true,
-                            // 'video':{ 'facingMode': {exact: "environment"} }  // 摄像头后置
+                            'video':{ 'facingMode': {exact: "environment"} }  // 摄像头后置
                         },
                         stream => {
                             webcamElement.srcObject = stream;
