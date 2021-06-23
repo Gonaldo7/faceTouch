@@ -37,8 +37,8 @@
     </head>
     <body>
         <div class="box">
-            <video autoplay playsinline muted id="webcam"></video>
-            <canvas id="canvas"></canvas>
+            <video height="500" autoplay playsinline muted id="webcam"></video>
+            <canvas height="500" id="canvas"></canvas>
             <h1>Loading...</h1>
         </div>
         
@@ -47,10 +47,8 @@
             return new Promise( ( resolve, reject ) => {
                 const webcamElement = document.getElementById( "webcam" );
                 webcamElement.width = window.innerWidth
-                webcamElement.height = 700
                 const canvas = document.getElementById("canvas")
                 canvas.width = window.innerWidth
-                canvas.height = 700
                 const navigatorAny = navigator;
                 navigator.getUserMedia = navigator.getUserMedia ||
                 navigatorAny.webkitGetUserMedia || navigatorAny.mozGetUserMedia ||
